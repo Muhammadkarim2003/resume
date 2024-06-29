@@ -1,0 +1,228 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS Resume Template</title>
+
+    <!-- Google font  -->
+    <!-- Font Awesome CSS ni ulashing -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+</head>
+<body>
+    <main class="resume-contents">
+        <section class="left-section">
+            <div class="left-section-contents">
+                <div class="profile">
+                {% for img in avatar %}
+                    <img class="profile-image" src="{{ img.image.url }}" alt="Profile image">
+                {% endfor %}
+                    {% for mens in men %}
+                    <p class="name">{{ mens.full_name }}</p>
+                    <p class="profession">{{ mens.kasb }}</p>
+                    {% endfor %}
+                </div>
+                <div class="contact-info">
+                    <p class="left-title">Contact Info</p>
+                    <ul>
+                        {% for contacts in contactinfo %}
+                        <li><i class="fa fa-phone"></i>{{ contacts.tel_number }}
+                        </li>
+                        <li><i class="fa fa-envelope"></i>{{ contacts.email }}
+                        </li>
+                        <li><i class="fa fa-github"></i>{{ contacts.github }}
+                        </li>
+                        <li><i class="fa fa-map-marker"></i>{{ contacts.location }}
+                        </li>
+                        <li><i class="fab fa-telegram"></i> <a href="{{ contacts.telegram }}">Telegram</a></li>
+
+                        {% endfor %}
+
+                    </ul>
+                </div>
+                <div class="skills">
+                    <p class="left-title">Skills</p>
+                    <ul>
+                        {% for skills in skills %}
+                        <li><p>{{ skills.name }}</p></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="references">
+{#                    <p class="left-title">References</p>#}
+{#                    <div class="refer">#}
+{#                        <p class="referance-name">Lorem ipsum</p>#}
+{#                        <p class="referance-profession">Lorem, ipsum dolor.</p>#}
+{#                        <ul>#}
+{#                            <li>#}
+{#                                <i class="fa fa-phone"></i>#}
+{#                                +123456789#}
+{#                            </li>#}
+{#                            <li>#}
+{#                                <i class="fa fa-envelope"></i>#}
+{#                                loremipsum@amail.com#}
+{#                            </li>#}
+                        </ul>
+                    </div>
+                    <div class="refer">
+{#                        <p class="referance-name">Lorem ipsum</p>#}
+{#                        <p class="referance-profession">Lorem, ipsum dolor.</p>#}
+{#                        <ul>#}
+{#                            <li>#}
+{#                                <i class="fa fa-phone"></i>#}
+{#                                +123456789#}
+{#                            </li>#}
+{#                            <li>#}
+{#                                <i class="fa fa-envelope"></i>#}
+{#                                loremipsum@amail.com#}
+{#                            </li>#}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="right-section">
+            <div class="right-section-contents">
+                <section class="about gap">
+                    <div class="right-title">About Me</div>
+                    {% for about in about %}
+                    <p class="about-me-contents">
+                        {{ about.about_me }}
+                    </p>
+                    {% endfor %}
+                </section>
+
+                <section class="experience gap">
+{#                    <div class="right-title">Experience</div>#}
+{#                    <div class="experience-contents">#}
+{#                        <div class="exp-left">#}
+{#                            <p class="exp-company-name">Company one</p>#}
+{#                            <p class="exp-time-period">2016-2018</p>#}
+{#                        </div>#}
+{#                        <div class="exp-right">#}
+{#                            <p class="exp-position">position one</p>#}
+{#                            <p class="exp-desc">#}
+{#                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, quo. Non provident odio nam quas praesentium! #}
+{#                                Fugit laborum accusantium repellat?#}
+{#                            </p>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="experience-contents">#}
+{#                        <div class="exp-left">#}
+{#                            <p class="exp-company-name">Company two</p>#}
+{#                            <p class="exp-time-period">2016-2018</p>#}
+{#                        </div>#}
+{#                        <div class="exp-right">#}
+{#                            <p class="exp-position">position two</p>#}
+{#                            <p class="exp-desc">#}
+{#                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, quo. Non provident odio nam quas praesentium! #}
+{#                                Fugit laborum accusantium repellat?#}
+{#                            </p>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="experience-contents">#}
+{#                        <div class="exp-left">#}
+{#                            <p class="exp-company-name">Company three</p>#}
+{#                            <p class="exp-time-period">2016-2018</p>#}
+{#                        </div>#}
+{#                        <div class="exp-right">#}
+{#                            <p class="exp-position">position three</p>#}
+{#                            <p class="exp-desc">#}
+{#                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, quo. Non provident odio nam quas praesentium! #}
+{#                                Fugit laborum accusantium repellat?#}
+{#                            </p>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </section>#}
+
+                <section class="education gap">
+                    <div class="right-title">Education</div>
+                    <div class="education-contents">
+                        <div class="education-left">
+                            <p class="education-school-name">Toshkent axborot texnologiyalari
+universiteti </p>
+                            <p class="educationp-time-period">2022-hozirgacha</p>
+                        </div>
+                        <div class="education-right">
+                            <p class="education-subject">Kompyuter injineringi</p>
+                            <p class="education-desc">
+                                Kompyuter injineringi Multimediya texnologiyalari, 2-kurs talabasi
+                            </p>
+                        </div>
+                    </div>
+{#                    <div class="education-contents">#}
+{#                        <div class="education-left">#}
+{#                            <p class="education-school-name">College name</p>#}
+{#                            <p class="educationp-time-period">2016-2018</p>#}
+{#                        </div>#}
+{#                        <div class="education-right">#}
+{#                            <p class="education-subject">Science</p>#}
+{#                            <p class="education-desc">#}
+{#                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, quo. Non provident odio nam quas praesentium! #}
+{#                                Fugit laborum accusantium repellat?#}
+{#                            </p>#}
+{#                        </div>#}
+{#                    </div>#}
+                    <div class="education-contents">
+                        <div class="education-left">
+                            <p class="education-school-name">Najot ta'lim</p>
+                            <p class="educationp-time-period">2022-2023</p>
+                        </div>
+                        <div class="education-right">
+                            <p class="education-subject">Python backend</p>
+                            <p class="education-desc">
+                                Python django backend yo'nalishi
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="awards gap">
+                    <div class="right-title">Loyihalar</div>
+                    <div class="awards-contents">
+                        <div class="awards-left">
+                            <p class="awards-company-name"><a href="https://github.com/Muhammadkarim2003/Django_project" target="_blank">Online do'kon</a></p>
+                            <p class="awards-time-period">2023-yil Oktabr</p>
+                        </div>
+                        <div class="awards-right">
+                            <p class="awards-name">Python, Django, Django Rest Framework, Docker
+                            <p class="awards-desc">
+                                Online do’kon loyihasida foydalanuvchilar mahsulotlarni onlayn tarzda sotib olishlari mumkin.
+Loyihada foydalanuvchining to’lov tarixi, eng ko’p xarid qilingan mahsulotlar, muddati o’tkan
+mahsulotlar ro’yhatini olish imkoniyati mavjud.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="awards-contents">
+                        <div class="awards-left">
+                            <p class="awards-company-name"><a href="https://github.com/Muhammadkarim2003/Lugat">Lug'at dasturi</a></p>
+                            <p class="awards-time-period">2023-yil Fevral</p>
+                        </div>
+                        <div class="awards-right">
+                            <p class="awards-name">Python</p>
+                            <p class="awards-desc">
+                                Bu dasturda foydalanuvchi inglizcha va o’zbekcha so’zlarni saqlashi mumkin. Kerakli vaqtda
+so’z qidirishi, o’zbekcha so’zni kiritganda inglizchasini yoki inglizcha so’z kiritilsa
+o’zbekchasini <ekrang></ekrang>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
